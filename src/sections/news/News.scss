@@ -1,0 +1,96 @@
+.news {
+
+    &__card,
+    .card {
+        display: grid;
+        grid-template-areas:
+            "img img img"
+            "null time-span null-b"
+            "null head null-b"
+            "nav-left desc nav-right"
+            "nav-leftss desc-long nav-rightss"
+            "null-c showmore null-d";
+        row-gap: 15px;
+        justify-items: center;
+        align-items: center;
+        position: relative;
+        max-width: 300px;
+        box-shadow: 6px 9px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 10px 10px 20px 20px;
+        overflow: hidden;
+        padding-bottom: 20px;
+        grid-template-columns: 10% 1fr 10%;
+
+        @media (min-width: 960px) {
+            max-width: 500px;
+        }
+
+        @media (min-width: 1200px) {
+            max-width: 600px;
+        }
+
+        &__img {
+            width: 100%;
+            grid-area: img;
+            max-height: 250px;
+            object-fit: cover;
+        }
+
+        &__desc {
+            grid-area: desc;
+            color: var(--color-grey);
+            padding-left: 12px;
+            transition: opacity 0.3s, height 0.3s;
+            // max-width: 320px;
+        }
+
+        &__long-txt-wrap {
+            grid-area: desc-long;
+            transform: translateY(-16px);
+        }
+
+        &__head {
+            grid-area: head;
+            font-size: 20px;
+            justify-self: left;
+        }
+
+        &__icon {
+            grid-area: time-span;
+            justify-self: flex-start;
+        }
+
+        &__time {
+            grid-area: time-span;
+            justify-self: flex-start;
+            margin-left: 30px;
+            color: var(--color-blue-dark);
+        }
+
+        &__show-more-btn {
+            grid-area: showmore;
+
+            @media (min-width: 960px) {
+                display: none;
+            }
+        }
+
+        &__nav {
+            color: var(--color-blue-dark);
+            transition: 0.2s;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.15);
+            }
+
+            &--left {
+                grid-area: nav-left;
+            }
+
+            &--right {
+                grid-area: nav-right;
+            }
+        }
+    }
+}

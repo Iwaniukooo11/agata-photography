@@ -1,0 +1,83 @@
+.contact {
+    background: linear-gradient(180deg, var(--color-blue-dark) 30%, var(--color-blue-light) 100%);
+
+    :global(.icon) {
+        color: var(--color-white);
+        opacity: .9;
+    }
+
+    .container {
+        display: grid;
+        padding: 0 25px 10vh;
+        grid-gap: 20px;
+    }
+
+    &__list,
+    .list {
+        width: 100%;
+        display: grid;
+        row-gap: 10px;
+        justify-content: flex-start;
+        font-size: 16px;
+        color: var(--color-white);
+        opacity: 0.85;
+
+        &__element {
+            display: flex;
+            align-items: center;
+            transition: .3s;
+            opacity: .85;
+
+            &:hover {
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+
+        &__icon {
+            font-size: 1.2em;
+            padding-right: 5px;
+
+            &.fa-envelope-open {
+                margin-left: -3px;
+            }
+        }
+    }
+
+    &__svg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        grid-column: unset;
+    }
+
+    @media(min-width:768px) {
+        .container {
+            grid-template-areas:
+                'header header'
+                'icons desc';
+        }
+
+        :global(.header) {
+            grid-area: header;
+        }
+
+        &__desc {
+            grid-area: desc;
+        }
+
+        &__list {
+            grid-area: icons;
+            align-content: flex-start;
+
+        }
+
+        @media(min-width:960px) {
+            &__svg {
+                width: auto;
+                height: 50%;
+            }
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.gallery {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 25px;
+        width: 100%;
+
+        &--short {
+            display: grid;
+
+            @media(min-width:768px) {
+                grid-template-areas:
+                    'i0 i1'
+                    'i0 i2';
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+
+                .gallery__img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                @for $i from 0 to 3 {
+                    .gallery__list-element.i#{$i} {
+                        grid-area: unquote('i'+$i);
+                        width: 100%;
+                        height: 100%;
+
+                    }
+                }
+            }
+        }
+
+        &--main {
+            display: none;
+
+            &.active {
+                display: grid;
+            }
+
+            @media(min-width:768px) {
+                grid-template-areas:
+                    'i0 i1 i2 i3'
+                    'i4 i4 i6 i6'
+                    'i5 i5 i6 i6'
+                    'i7 i8 i9 i10';
+
+                .gallery__img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                @for $j from 0 to 11 {
+                    .gallery__list-element.i#{$j} {
+                        grid-area: unquote('i'+$j);
+
+                        &.onShow {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__list-element {
+        opacity: 0;
+        transition: .2s .2s;
+        height: 0;
+        overflow: hidden;
+        border-radius: 4px;
+
+        opacity: 1;
+        height: auto;
+        margin: 13px 0;
+
+        &--button {
+            height: auto;
+            opacity: 1;
+            margin-top: 30px;
+            align-self: center;
+        }
+
+    }
+
+    &__img {
+        border-radius: inherit;
+        transition: .3s;
+        opacity: 1;
+        max-width: 100%;
+
+        &:hover {
+            transform: scale(1.2);
+            opacity: .85;
+            cursor: pointer;
+
+        }
+    }
+
+    &__no-visible {
+        display: none;
+
+    }
+}

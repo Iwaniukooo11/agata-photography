@@ -1,0 +1,102 @@
+<script>
+  export let content, contact;
+
+  const socials = [
+    {
+      icon: "fab fa-facebook",
+      text: contact.facebookNick,
+      link: contact.facebookLink
+    },
+    {
+      icon: "fab fa-instagram",
+      text: contact.instagramNick,
+      link: contact.instagramLink
+    }
+  ];
+</script>
+
+<style type="text/scss">
+  @import "./Landing-page.scss";
+</style>
+
+<div class="landing-wrap" data-section="home">
+  <section class="lnd-page">
+    <div class="lnd-page__txt-content">
+      <h1 class="lnd-page__head">{content.header}</h1>
+      <div class="lnd-page__job-wrap job-wrap">
+        <i class="fas fa-camera-retro job-wrap__icon" />
+        <h2 class="job-wrap__desc">Fotograf</h2>
+      </div>
+
+    </div>
+    <p class="lnd-page__desc section__desc section__desc--white">
+      {content.description}
+    </p>
+
+    <div class="lnd-page__line" />
+
+    <ul class="lnd-page__social-list social-list">
+      {#each socials as item}
+        <li class="social-list__element">
+          <a href={item.link} target="_blank" class="social-list__link">
+            <i class="{item.icon} social-list__icon" />
+            <span class="social-list__txt">{item.text}</span>
+          </a>
+        </li>
+      {/each}
+    </ul>
+    <img class="lnd-page__white-shape" src="assets/background/landing-bg.svg" />
+  </section>
+
+  <section
+    class="carousel slide gallery-slider"
+    data-ride="carousel"
+    id="gallery-carousel">
+    <ul
+      class="gallery-slider__image-list image-list carousel-inner"
+      id="lnd-page-gallery">
+
+      <li class="image-list__element carousel-item active">
+        <img
+          src={content.images[0].url}
+          alt="1-slide"
+          class="image-list__img d-block w-10" />
+      </li>
+
+      <li class="image-list__element carousel-item ">
+        <img
+          src={content.images[1].url}
+          alt="2-slide"
+          class="image-list__img d-block w-10" />
+      </li>
+
+      {#each content.images as element, i}
+        {#if i > 1}
+          <li class="image-list__element carousel-item ">
+            <img
+              src={content.images[i].url}
+              alt="{i + 1}-slide"
+              class="image-list__img d-block w-10" />
+          </li>
+        {/if}
+      {/each}
+
+    </ul>
+    <a
+      class="carousel-control-prev"
+      href="#gallery-carousel"
+      role="button"
+      data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true" />
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#gallery-carousel"
+      role="button"
+      data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true" />
+      <span class="sr-only">Next</span>
+    </a>
+  </section>
+</div>
