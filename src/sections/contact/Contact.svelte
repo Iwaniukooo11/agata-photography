@@ -43,6 +43,9 @@
       {/each}
     </ul>
   </div>
-  <img class="contact__svg" src="assets/background/contact-bg.svg" alt="" />
+  <img
+    class="contact__svg"
+    src="background/contact-bg.svg"
+    alt="bacgkround image" />
 
 </section>

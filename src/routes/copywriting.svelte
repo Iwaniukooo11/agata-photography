@@ -1,9 +1,8 @@
 <script>
   import fetch from "node-fetch";
   import Layout from "../layout/Layout.svelte";
-  import Gallery from "../sections/gallery/Gallery.svelte";
   import About from "../sections/about/About.svelte";
-  import News from "../sections/news/News.svelte";
+  import News from "../sections/news-colapse/News-colapse.svelte";
   import Price from "../sections/price/Price.svelte";
 
   import token from "../sensitive_data/token.js";
@@ -28,32 +27,24 @@
       body: JSON.stringify({
         query: `
     			{
-          phAbout{
+          cwAbout{
               descriptionUp
               descriptionDown
               profilePhoto{
               url
               }
     				}
-    				phNews{
+    				
+    				allCwNewsCards{
+    					title
     					description
-    				}
-    				allPhNewsCards{
-    					header
-    					description
-    					time
-    				}
-    				phGallery{
-    					description
-
-    					imagesTop3{
-    						url
-    					}
-    					imagesAll{
-    						url
+              date
+              images{
+    					url
     					}
     				}
-    				allPhPriceCards{
+    		
+    				allCwPriceCards{
     					title
     					price
     					description
@@ -77,16 +68,12 @@
   <title>dupa</title>
 </svelte:head>
 
-<Layout current="photography">
+<Layout current="copywriting">
   {#await promise then content}
 
-    <Gallery icon={icons.gallery} content={content.phGallery} />
-    <About icon={icons.about} content={content.phAbout} />
-
-    <News
-      icon={icons.news}
-      content={{ ...content.news, list: { ...content.allPhNewsCards } }} />
-    <Price icon={icons.price} content={content.allPhPriceCards} />
+    <About icon={icons.about} content={content.cwAbout} />
+    <News icon={icons.about} content={content.allCwNewsCards} />
+    <Price icon={icons.price} content={content.allCwPriceCards} />
 
   {/await}
 

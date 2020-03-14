@@ -21,6 +21,7 @@
             Pokaż więcej!
         {/if}
     </button> -->
+
 <button
   class="section__show-more-btn"
   on:click={showMore ? () => scrollto({
@@ -31,3 +32,8 @@
 
   {#if showMore}Pokaż mniej{:else}Pokaż więcej!{/if}
 </button>
+
+<!-- <button class="section__show-more-btn" on:click={e => console.log(e)}>
+
+  {#if showMore}Pokaż mniej{:else}Pokaż więcej!{/if}
+</button> -->

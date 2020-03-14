@@ -45,7 +45,10 @@
         </li>
       {/each}
     </ul>
-    <img class="lnd-page__white-shape" src="assets/background/landing-bg.svg" />
+    <img
+      class="lnd-page__white-shape"
+      alt="background image"
+      src="background/landing-bg.svg" />
   </section>
 
   <section

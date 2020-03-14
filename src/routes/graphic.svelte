@@ -3,7 +3,6 @@
   import Layout from "../layout/Layout.svelte";
   import Gallery from "../sections/gallery/Gallery.svelte";
   import About from "../sections/about/About.svelte";
-  import News from "../sections/news/News.svelte";
   import Price from "../sections/price/Price.svelte";
 
   import token from "../sensitive_data/token.js";
@@ -28,22 +27,14 @@
       body: JSON.stringify({
         query: `
     			{
-          phAbout{
+          grAbout{
               descriptionUp
               descriptionDown
               profilePhoto{
               url
               }
     				}
-    				phNews{
-    					description
-    				}
-    				allPhNewsCards{
-    					header
-    					description
-    					time
-    				}
-    				phGallery{
+    				grGallery{
     					description
 
     					imagesTop3{
@@ -53,7 +44,7 @@
     						url
     					}
     				}
-    				allPhPriceCards{
+    				allGrPriceCards{
     					title
     					price
     					description
@@ -77,16 +68,12 @@
   <title>dupa</title>
 </svelte:head>
 
-<Layout current="photography">
+<Layout current="graphic">
   {#await promise then content}
+    <About icon={icons.about} content={content.grAbout} />
 
-    <Gallery icon={icons.gallery} content={content.phGallery} />
-    <About icon={icons.about} content={content.phAbout} />
-
-    <News
-      icon={icons.news}
-      content={{ ...content.news, list: { ...content.allPhNewsCards } }} />
-    <Price icon={icons.price} content={content.allPhPriceCards} />
+    <Gallery icon={icons.gallery} content={content.grGallery} />
+    <Price icon={icons.price} content={content.allGrPriceCards} />
 
   {/await}
 
