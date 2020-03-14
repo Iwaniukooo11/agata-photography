@@ -46,7 +46,9 @@
     <span class="hamburger-inner" />
   </span>
 </button>
+
 <nav class="nav {isActive ? 'active' : null}" on:click={setActiveHandler}>
+  <img class="nav__logo" src="logo-final.png" alt="logo-image" />
 
   <ul class="nav__list">
     {#each list as element, i}
