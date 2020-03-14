@@ -16,6 +16,12 @@
     { class: "fas fa-envelope-open", text: contact.mail, link: null },
     { class: "fas fa-map-marker-alt", text: contact.localization, link: null }
   ];
+
+  const links = [
+    { text: "Fotografia", link: "photography" },
+    { text: "Grafika", link: "graphic" },
+    { text: "Copywriting", link: "copywriting" }
+  ];
 </script>
 
 <style type="text/scss">
@@ -39,6 +45,21 @@
           {:else}
             <span class="list__content">{element.text}</span>
           {/if}
+        </li>
+      {/each}
+    </ul>
+    <p class="section__desc contact__desc section__desc--white">
+      Zapraszam do zapoznania się z moimi innymi profesjami:
+    </p>
+    <ul class="contact__link-list">
+      {#each links as element}
+        <li class="contact__link-element list__element">
+          <a
+            class="contact__link-profession"
+            rel="prefetch"
+            href="/{element.link}">
+            {element.text}
+          </a>
         </li>
       {/each}
     </ul>

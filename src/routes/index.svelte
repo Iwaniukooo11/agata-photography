@@ -1,46 +1,93 @@
-<style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
+<script>
+  import fetch from "node-fetch";
+  import Layout from "../layout/Layout.svelte";
+  import Gallery from "../sections/gallery/Gallery.svelte";
+  import About from "../sections/about/About.svelte";
+  import News from "../sections/news/News.svelte";
+  import Price from "../sections/price/Price.svelte";
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
+  import token from "../sensitive_data/token.js";
 
-	figure {
-		margin: 0 0 1em 0;
-	}
+  const icons = {
+    about: "fas fa-user-circle",
+    gallery: "far fa-images",
+    news: "far fa-newspaper",
+    price: "fas fa-shopping-basket",
+    contact: "fas fa-id-card"
+  };
+  let content = null;
 
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
+  const fetchData = async () => {
+    const ret = await fetch("https://graphql.datocms.com/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        query: `
+    			{
+          phAbout{
+              descriptionUp
+              descriptionDown
+              profilePhoto{
+              url
+              }
+    				}
+    				phNews{
+    					description
+    				}
+    				allPhNewsCards{
+    					header
+    					description
+    					time
+    				}
+    				phGallery{
+    					description
 
-	p {
-		margin: 1em auto;
-	}
+    					imagesTop3{
+    						url
+    					}
+    					imagesAll{
+    						url
+    					}
+    				}
+    				allPhPriceCards{
+    					title
+    					price
+    					description
+    					images{
+    					url
+    					}
+    				}
 
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-</style>
+    			}
+    			`
+      })
+    });
+    const data = await ret.json();
+    content = data.data;
+    return data.data;
+  };
+  let promise = fetchData();
+</script>
 
 <svelte:head>
-	<title>Sapper project template</title>
+  <title>dupa</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<Layout current="photography">
+  {#await promise then content}
 
-<figure>
-	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
-</figure>
+    <Gallery icon={icons.gallery} content={content.phGallery} />
+    <About icon={icons.about} content={content.phAbout} />
 
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+    <News
+      icon={icons.news}
+      content={{ ...content.news, list: { ...content.allPhNewsCards } }} />
+    <Price icon={icons.price} content={content.allPhPriceCards} />
+
+  {/await}
+
+</Layout>
