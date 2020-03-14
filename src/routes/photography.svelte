@@ -74,7 +74,7 @@
 </script>
 
 <svelte:head>
-  <title>dupa</title>
+  <title>Raw - Fotografia</title>
 </svelte:head>
 
 <Layout current="photography">

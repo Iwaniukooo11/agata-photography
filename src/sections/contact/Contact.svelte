@@ -48,7 +48,9 @@
         </li>
       {/each}
     </ul>
-    <p class="section__desc contact__desc section__desc--white">
+    <p
+      class="section__desc contact__desc section__desc--white
+      contact__desc--proffesions">
       Zapraszam do zapoznania się z moimi innymi profesjami:
     </p>
     <ul class="contact__link-list">

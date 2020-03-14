@@ -65,7 +65,7 @@
 </script>
 
 <svelte:head>
-  <title>dupa</title>
+  <title>Raw - Grafika</title>
 </svelte:head>
 
 <Layout current="graphic">

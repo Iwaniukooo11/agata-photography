@@ -25,7 +25,7 @@
       <h1 class="lnd-page__head">{content.header}</h1>
       <div class="lnd-page__job-wrap job-wrap">
         <i class="fas fa-camera-retro job-wrap__icon" />
-        <h2 class="job-wrap__desc">Fotograf</h2>
+        <h2 class="job-wrap__desc">Fotograf, Grafik, Copywriter</h2>
       </div>
 
     </div>
