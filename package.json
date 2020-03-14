@@ -14,8 +14,10 @@
   "dependencies": {
     "compression": "^1.7.1",
     "express": "^4.17.1",
+    "express-session": "^1.17.0",
     "node-fetch": "^2.6.0",
     "polka": "next",
+    "session-file-store": "^1.4.0",
     "sirv": "^0.4.0",
     "svelte-scrollto": "^0.1.1"
   },
