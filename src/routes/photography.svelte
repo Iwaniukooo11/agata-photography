@@ -67,6 +67,7 @@
       })
     });
     const data = await ret.json();
+    console.log(data, "get!");
     content = data.data;
     return data.data;
   };
