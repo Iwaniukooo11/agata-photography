@@ -8,7 +8,9 @@
 
   $: showMore = false;
 
-  const toggleShowHandler = () => (showMore = !showMore);
+  const toggleShowHandler = () => {
+    showMore = !showMore;
+  };
 </script>
 
 <style type="text/scss">

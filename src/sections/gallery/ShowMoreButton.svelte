@@ -1,6 +1,6 @@
 <script>
-  // import * as animateScroll from "svelte-scrollto";
-  import { scrollto } from "svelte-scrollto";
+  import * as animateScroll from "svelte-scrollto";
+  // import { scrollto } from "svelte-scrollto";
 
   export let toggleShowHandler, showMore;
 </script>
@@ -24,7 +24,7 @@
 
 <button
   class="section__show-more-btn"
-  on:click={showMore ? () => scrollto({
+  on:click={showMore ? () => animateScroll.scrollTo({
           element: '.section.gallery',
           onStart: toggleShowHandler,
           duration: 300
