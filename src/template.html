@@ -62,14 +62,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
 	%sapper.scripts%
 	<script>
+		console.log(':)')
+		window.onpopchange = () => console.log('wrrrr')
 		try {
 			const addGallery = () => {
 				if ($("[data-lg='true']").length > 1) {
 					$("[data-lg='true']").lightGallery()
-					clearInterval(inter)
+					// clearInterval(inter)
 				}
+				// console.log($("[data-lg='true']"))
 			}
-			const inter = setInterval(addGallery, 300);
+			const inter = setInterval(addGallery, 500);
 		} catch {
 			console.log(':(')
 		}
