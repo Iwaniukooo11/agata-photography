@@ -94,14 +94,16 @@ export default {
         preprocess
       }),
       resolve({
-        dedupe: ["svelte"]
-      }),
-      commonjs()
+        // dedupe: ["svelte"]
+        preferBuiltins: true
+      })
+      // commonjs()
     ],
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules ||
         Object.keys(process.binding("natives"))
     ),
+    // external: ["sirv", "polka"],
 
     onwarn
   },
