@@ -14,7 +14,6 @@ const FileStore = sessionFileStore(session);
 
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === "development";
-console.log({ dev });
 
 // polka(); // You can also use Express
 express()

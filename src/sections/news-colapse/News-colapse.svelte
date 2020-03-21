@@ -1,7 +1,6 @@
 <script>
   import Header from "../../components/Header/Header.svelte";
   export let icon, content;
-  console.log(icon, content);
 </script>
 
 <style lang="scss">

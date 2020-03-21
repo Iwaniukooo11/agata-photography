@@ -3,9 +3,7 @@
     --color-grey: #AEAEAE;
     --color-black: #000;
     --color-blue-dark: #0190BB;
-    // --color-blue-dark: #985dff;
     --color-blue-light: #87DCF6;
-    // --color-blue-light: #d85b95;
 }
 
 :global(#app.photography) {
@@ -31,17 +29,12 @@
 
 }
 
-:global(#sapper) {
-    // pointer-events: none;
-}
 
 :global(.section > *) {
     grid-column: 2 / span 1;
 }
 
-:global(body, #sapper) {
-    // pointer-events: none;
-}
+
 
 :global(body) {
     font-family: 'Poppins', sans-serif;

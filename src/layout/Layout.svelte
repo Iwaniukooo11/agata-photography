@@ -1,5 +1,4 @@
 <script>
-  //   const fetch = require("node-fetch");
   import fetch from "node-fetch";
 
   import LandingPage from "../sections/landing-page/Landing-page.svelte";
@@ -80,6 +79,6 @@
       content={content.contact}
       contact={content.contactAsset} />
   {:catch}
-    uga dupa
+    404
   {/await}
 </div>
