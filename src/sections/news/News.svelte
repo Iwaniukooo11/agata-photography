@@ -47,6 +47,8 @@
     if (window.innerWidth >= 960) showMore = true;
     is960 = true;
   };
+
+  console.log(content.phNews);
 </script>
 
 <style type="text/scss">
@@ -63,10 +65,7 @@
     <Header title="Aktualności" {icon} />
     <p class="section__desc">{content.description}</p>
     <article class="news__card card ">
-      <img
-        class="card__img "
-        src="https://cdn.pixabay.com/photo/2019/11/12/18/41/vancouver-4621816_960_720.jpg"
-        alt="zdjęcie tytułowe" />
+      <img class="card__img " src={element.image.url} alt="zdjęcie tytułowe" />
       <i class="card__icon far fa-clock" />
       <time class="card__time" datetime={element.time}>{element.time}</time>
       <h3 class="card__head">{element.header}</h3>

@@ -41,7 +41,10 @@
     				allPhNewsCards{
     					header
     					description
-    					time
+              time
+              image{
+                url
+              }
     				}
     				phGallery{
     					description
@@ -85,7 +88,9 @@
 
     <News
       icon={icons.news}
-      content={{ ...content.news, list: { ...content.allPhNewsCards } }} />
+      content={Object.assign({}, content.phNews, {
+        list: content.allPhNewsCards
+      })} />
     <Price icon={icons.price} content={content.allPhPriceCards} />
 
   {/await}
