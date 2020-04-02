@@ -13,7 +13,7 @@ import bodyParser from "body-parser";
 const FileStore = sessionFileStore(session);
 
 const { PORT, NODE_ENV } = process.env;
-const dev = NODE_ENV === "development";
+// const dev = NODE_ENV === "development";
 
 // polka(); // You can also use Express
 // express()
