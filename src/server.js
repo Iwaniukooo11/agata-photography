@@ -16,14 +16,18 @@ const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === "development";
 
 // polka(); // You can also use Express
-express()
-  .use(
-    // "/photography",
-    compression({ threshold: 0 }),
-    // sirv("static", { dev }),
-    sirv("static", { dev: true }),
-    sapper.middleware()
-  )
-  .listen(PORT, err => {
-    if (err) console.log("error", err);
-  });
+// express()
+//   .use(
+//     // "/photography",
+//     compression({ threshold: 0 }),
+//     // sirv("static", { dev }),
+//     sirv("static", { dev: true }),
+//     sapper.middleware()
+//   )
+//   .listen(PORT, err => {
+//     if (err) console.log("error", err);
+//   });
+
+const app = express();
+const dist = "../export";
+app.use(express.static(dist));
