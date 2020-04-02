@@ -20,7 +20,8 @@ express()
   .use(
     // "/photography",
     compression({ threshold: 0 }),
-    sirv("static", { dev }),
+    // sirv("static", { dev }),
+    sirv("static", { dev: true }),
     sapper.middleware()
   )
   .listen(PORT, err => {
