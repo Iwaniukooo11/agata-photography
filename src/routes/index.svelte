@@ -71,6 +71,7 @@
     			`
       })
     });
+    console.log("before-load", process.env.API_KEY);
     const data = await ret.json();
     content = data.data;
     return data.data;
