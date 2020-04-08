@@ -14,7 +14,8 @@
   };
 
   let content = null;
-  import token from "../sensitive_data/token.js";
+  // import token from "../sensitive_data/token.js";
+  const token = process.env.API_KEY;
 
   const fetchData = async () => {
     const ret = await fetch("https://graphql.datocms.com/", {
