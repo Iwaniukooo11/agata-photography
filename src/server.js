@@ -13,10 +13,10 @@ import sessionFileStore from "session-file-store";
 const FileStore = sessionFileStore(session);
 
 const { PORT, NODE_ENV } = process.env;
-const dev = NODE_ENV === "development";
+const dev = NODE_ENV === "development"; // You can also use Express
 
-polka(); // You can also use Express
-express()
+// express()
+polka()
   .use(
     // "/photography",
     compression({ threshold: 0 }),
