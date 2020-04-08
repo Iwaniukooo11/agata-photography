@@ -5,7 +5,8 @@
   import About from "../sections/about/About.svelte";
   import Price from "../sections/price/Price.svelte";
 
-  import token from "../sensitive_data/token.js";
+  // import token from "../sensitive_data/token.js";
+  const token = process.env.API_KEY;
 
   const icons = {
     about: "fas fa-user-circle",
