@@ -5,6 +5,6 @@ sapper.start({
 });
 
 // window.prefetchRoutes = () =>
-sapper.prefetchRoutes(["/graphic", "copywriting", "photography"]);
-window.prefetch = (href) => sapper.prefetch(href);
-window.goto = (href) => sapper.goto(href);
+// sapper.prefetchRoutes(["/graphic", "copywriting", "photography"]);
+// window.prefetch = (href) => sapper.prefetch(href);
+// window.goto = (href) => sapper.goto(href);
