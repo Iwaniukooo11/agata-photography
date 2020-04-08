@@ -8,7 +8,7 @@ import * as sapper from "@sapper/server";
 
 import session from "express-session";
 import sessionFileStore from "session-file-store";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 
 const FileStore = sessionFileStore(session);
 
@@ -24,7 +24,7 @@ express()
     sirv("static", { dev: true }),
     sapper.middleware()
   )
-  .listen(PORT, err => {
+  .listen(PORT, (err) => {
     if (err) console.log("error", err);
   });
 
