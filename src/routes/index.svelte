@@ -57,7 +57,7 @@
     					}
             }
             price{
-              description
+              phDescription
             }
     				allPhPriceCards{
     					title

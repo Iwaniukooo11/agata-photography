@@ -44,7 +44,7 @@
     					}
             }
             price{
-              description
+              cwDescription
             }
     		
     				allCwPriceCards{

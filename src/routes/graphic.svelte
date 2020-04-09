@@ -45,7 +45,7 @@
     					}
             }
             price{
-              description
+              grDescription
             }
     				allGrPriceCards{
     					title
