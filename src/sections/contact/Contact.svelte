@@ -56,12 +56,7 @@
     <ul class="contact__link-list">
       {#each links as element}
         <li class="contact__link-element list__element">
-          <!-- <a
-            class="contact__link-profession"
-            rel="prefetch"
-            href="/{element.link}">
-            {element.text}
-          </a> -->
+
           <a class="contact__link-profession" href="/{element.link}">
             {element.text}
           </a>

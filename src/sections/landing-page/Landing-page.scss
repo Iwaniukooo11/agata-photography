@@ -35,6 +35,21 @@
         }
     }
 
+    &__links-list,
+    .links-list {
+        color: var(--color-white);
+        font-size: 1.2em;
+
+        &__element {
+            transition: .3s;
+            opacity: 0.7;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
     &__job-wrap,
     .job-wrap {
         color: var(--color-white);

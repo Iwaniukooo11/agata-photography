@@ -13,6 +13,12 @@
       link: contact.instagramLink
     }
   ];
+
+  const subpages = [
+    { text: "Fotografia", link: "photography" },
+    { text: "Grafika", link: "graphic" },
+    { text: "Copywriting", link: "copywriting" }
+  ];
 </script>
 
 <style type="text/scss">
@@ -34,6 +40,16 @@
     </p>
 
     <div class="lnd-page__line" />
+
+    <ul class="lnd-page__links-list links-list">
+      {#each subpages as element}
+        <li class="links-list__element">
+          <a class="contact__link-profession" href="/{element.link}">
+            - {element.text}
+          </a>
+        </li>
+      {/each}
+    </ul>
 
     <ul class="lnd-page__social-list social-list">
       {#each socials as item}
