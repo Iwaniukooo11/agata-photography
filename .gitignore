@@ -6,3 +6,4 @@ yarn-error.log
 /__sapper__/build/
 /__sapper__/dev/
 token.js
+.env
