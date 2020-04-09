@@ -44,6 +44,10 @@
             font-size: 22px;
         }
 
+        @media(min-width:1200px) {
+            font-size: 24px;
+        }
+
         &__element {
             transition: .3s;
             opacity: 0.7;
