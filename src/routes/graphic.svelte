@@ -78,7 +78,7 @@
     <Gallery icon={icons.gallery} content={content.grGallery} />
     <Price
       icon={icons.price}
-      description={content.price.description}
+      description={content.price.grDescription}
       content={content.allGrPriceCards} />
 
   {/await}

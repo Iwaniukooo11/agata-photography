@@ -96,7 +96,7 @@
       })} />
     <Price
       icon={icons.price}
-      description={content.price.description}
+      description={content.price.phDescription}
       content={content.allPhPriceCards} />
 
   {/await}

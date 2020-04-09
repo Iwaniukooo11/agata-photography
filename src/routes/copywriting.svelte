@@ -78,7 +78,7 @@
     <News icon={icons.about} content={content.allCwNewsCards} />
     <Price
       icon={icons.price}
-      description={content.price.description}
+      description={content.price.cwDescription}
       content={content.allCwPriceCards} />
 
   {/await}
