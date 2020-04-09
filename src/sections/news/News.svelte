@@ -47,8 +47,6 @@
     if (window.innerWidth >= 960) showMore = true;
     is960 = true;
   };
-
-  console.log(content.phNews);
 </script>
 
 <style type="text/scss">

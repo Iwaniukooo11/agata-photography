@@ -55,7 +55,10 @@
     					imagesAll{
     						url
     					}
-    				}
+            }
+            price{
+              description
+            }
     				allPhPriceCards{
     					title
     					price
@@ -91,7 +94,10 @@
       content={Object.assign({}, content.phNews, {
         list: content.allPhNewsCards
       })} />
-    <Price icon={icons.price} content={content.allPhPriceCards} />
+    <Price
+      icon={icons.price}
+      description={content.price.description}
+      content={content.allPhPriceCards} />
 
   {/await}
 

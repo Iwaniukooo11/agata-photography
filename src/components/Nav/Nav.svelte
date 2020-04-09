@@ -18,11 +18,7 @@
       listEng: ["home", "about", "gallery", "price", "contact"]
     }
   ];
-  // const wr_list = ["home", "o mnie", "artykuły", "cennik", "kontakt"];
-  // const wr_listEng = ["home", "about", "news", "price", "contact"];
-  // const gr_list = ["home", "o mnie", "galeria", "cennik", "kontakt"];
-  // const gr_listEng = ["home", "about", "gallery", "price", "contact"];
-  // let list,listEng
+
   export let current;
 
   const list = data.filter(el => el.id == current)[0].list;
@@ -31,7 +27,6 @@
   let isActive = false;
 
   const setActiveHandler = () => (isActive = !isActive);
-  // export let current;
 </script>
 
 <style type="text/scss">
@@ -64,18 +59,3 @@
     {/each}
   </ul>
 </nav>
-<!-- {#if }
-  <ul class="nav__list">
-    {#each list as element, i}
-      <li class="nav__list-element">
-        <button
-          class="nav__link"
-          on:click={e => animateScroll.scrollTo({
-              element: `[data-section='${listEng[i]}']`
-            })}>
-          {element}
-        </button>
-      </li>
-    {/each}
-  </ul>
-</nav> -->

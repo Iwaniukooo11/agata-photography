@@ -43,7 +43,10 @@
     					imagesAll{
     						url
     					}
-    				}
+            }
+            price{
+              description
+            }
     				allGrPriceCards{
     					title
     					price
@@ -73,7 +76,10 @@
     <About icon={icons.about} content={content.grAbout} />
 
     <Gallery icon={icons.gallery} content={content.grGallery} />
-    <Price icon={icons.price} content={content.allGrPriceCards} />
+    <Price
+      icon={icons.price}
+      description={content.price.description}
+      content={content.allGrPriceCards} />
 
   {/await}
 

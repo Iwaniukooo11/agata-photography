@@ -1,6 +1,6 @@
 <script>
   import Header from "../../components/Header/Header.svelte";
-  export let icon, content;
+  export let icon, content, description;
 </script>
 
 <style lang="scss">
@@ -14,6 +14,8 @@
   data-aos-once="true">
   <div class="container">
     <Header title="Cennik" {icon} />
+    <p class="section__desc">{description}</p>
+
     <ul class="price__list list">
       {#each content as element}
         <li class="list__element">

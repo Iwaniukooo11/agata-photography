@@ -5,7 +5,7 @@
   import News from "../sections/news-colapse/News-colapse.svelte";
   import Price from "../sections/price/Price.svelte";
 
-  // import token from "../sensitive_data/token.js";
+  import token from "../sensitive_data/token.js";
 
   const icons = {
     about: "fas fa-user-circle",
@@ -42,7 +42,10 @@
               images{
     					url
     					}
-    				}
+            }
+            price{
+              description
+            }
     		
     				allCwPriceCards{
     					title
@@ -73,7 +76,10 @@
 
     <About icon={icons.about} content={content.cwAbout} />
     <News icon={icons.about} content={content.allCwNewsCards} />
-    <Price icon={icons.price} content={content.allCwPriceCards} />
+    <Price
+      icon={icons.price}
+      description={content.price.description}
+      content={content.allCwPriceCards} />
 
   {/await}
 
