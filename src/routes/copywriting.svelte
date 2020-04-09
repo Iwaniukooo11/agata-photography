@@ -5,7 +5,7 @@
   import News from "../sections/news-colapse/News-colapse.svelte";
   import Price from "../sections/price/Price.svelte";
 
-  import token from "../sensitive_data/token.js";
+  // import token from "../sensitive_data/token.js";
 
   const icons = {
     about: "fas fa-user-circle",
