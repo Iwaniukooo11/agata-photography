@@ -41,6 +41,7 @@
         &__price {
             position: relative;
             padding-right: 6px;
+            opacity: 0;
 
             &::after {
                 content: 'zł'

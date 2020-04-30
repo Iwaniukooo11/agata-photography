@@ -13,7 +13,7 @@
   data-aos="-"
   data-aos-once="true">
   <div class="container">
-    <Header title="Cennik" {icon} />
+    <Header title="Rodzaje projektów" {icon} />
     <p class="section__desc">{description}</p>
 
     <ul class="price__list list">
